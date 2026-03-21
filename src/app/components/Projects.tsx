@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Projects() {
@@ -27,37 +28,114 @@ export function Projects() {
   return (
     <section id="proyectos" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Proyectos</h2>
-          <div className="h-1 w-20 bg-gray-400"></div>
-        </div>
+          <motion.div
+            className="h-1 w-20 bg-gray-400"
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          />
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <article key={project.id} className="border-2 border-gray-300 bg-white hover:border-gray-800 transition-colors">
-              <div className="aspect-video bg-gray-200 border-b-2 border-gray-300 overflow-hidden">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.id}
+              className="border-2 border-gray-300 bg-white hover:border-gray-800 transition-colors cursor-pointer"
+              initial={{ opacity: 0, y: 50, rotateY: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.05,
+                rotateY: 5,
+                rotateX: 5,
+                boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
+                z: 50
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.div
+                className="aspect-video bg-gray-200 border-b-2 border-gray-300 overflow-hidden"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
                 <ImageWithFallback
                   src={project.image}
                   alt={`Proyecto ${project.id}`}
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
 
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900">Lorem ipsum dolor sit amet</h3>
+              <motion.div
+                className="p-6 space-y-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <motion.h3
+                  className="text-xl font-semibold text-gray-900"
+                  whileHover={{ scale: 1.02, color: "#2563eb" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Lorem ipsum dolor sit amet
+                </motion.h3>
 
-                <p className="text-gray-700">
+                <motion.p
+                  className="text-gray-700"
+                  initial={{ opacity: 0.8 }}
+                  whileHover={{ opacity: 1 }}
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua.
-                </p>
+                </motion.p>
 
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="px-3 py-1 text-xs border border-gray-400 bg-gray-100">Lorem</span>
-                  <span className="px-3 py-1 text-xs border border-gray-400 bg-gray-100">Ipsum</span>
-                  <span className="px-3 py-1 text-xs border border-gray-400 bg-gray-100">Dolor</span>
-                </div>
-              </div>
-            </article>
+                <motion.div
+                  className="flex flex-wrap gap-2 pt-1"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {['Lorem', 'Ipsum', 'Dolor'].map((tag, tagIndex) => (
+                    <motion.span
+                      key={tag}
+                      className="px-3 py-1 text-xs border border-gray-400 bg-gray-100"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.6 + index * 0.1 + tagIndex * 0.1,
+                        type: "spring"
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "#3b82f6",
+                        color: "white",
+                        borderColor: "#3b82f6"
+                      }}
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
