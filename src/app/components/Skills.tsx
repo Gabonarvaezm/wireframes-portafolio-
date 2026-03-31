@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 
 export function Skills() {
   const skillCategories = [
-    { title: 'Frontend', skills: ['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'] },
-    { title: 'Backend', skills: ['Lorem', 'Ipsum', 'Dolor', 'Sit'] },
-    { title: 'Herramientas', skills: ['Lorem', 'Ipsum', 'Dolor'] },
-    { title: 'Diseno', skills: ['Lorem', 'Ipsum', 'Dolor'] },
+    { title: 'Frontend', skills: ['Angular', 'JavaScript', 'React', 'Next.js', 'Vite', 'Tailwind CSS', 'CSS', 'TypeScript'] },
+    { title: 'Backend', skills: ['Node.js', 'Python', 'MySQL', 'SQLite', 'Java', 'Express.js'] },
+    { title: 'Herramientas', skills: ['Git y GitHub', 'Postman', 'VS Code', 'Vercel', 'Trello', 'Notion'] },
+    { title: 'Diseno', skills: ['Figma', 'Canva', 'Wireframing', 'Prototipado', 'Diseno responsive', 'Jerarquia visual'] },
   ];
 
   return (
@@ -127,7 +127,7 @@ export function Skills() {
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.5, backgroundColor: "#1d4ed8" }}
                     />
-                    Lorem ipsum
+                    {skill}
                   </motion.li>
                 ))}
               </motion.ul>

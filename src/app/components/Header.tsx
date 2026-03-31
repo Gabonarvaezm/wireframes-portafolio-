@@ -9,6 +9,8 @@ export function Header() {
     { href: "#sobre-mi", label: "Sobre mi" },
     { href: "#proyectos", label: "Proyectos" },
     { href: "#habilidades", label: "Habilidades" },
+    { href: "#testimonios", label: "Testimonios" },
+    { href: "#aprendizaje", label: "Aprendizaje" },
     { href: "#contactos", label: "Contactos" },
   ];
 

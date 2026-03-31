@@ -3,9 +3,9 @@ import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
 
 export function Contact() {
   const contactItems = [
-    { icon: Mail, title: "Lorem ipsum", detail: "lorem@ipsum.com" },
-    { icon: Phone, title: "Lorem ipsum", detail: "+00 000 000 0000" },
-    { icon: MapPin, title: "Lorem ipsum", detail: "Lorem ipsum city, dolor sit" },
+    { icon: Mail, title: "Correo", detail: "gabrielnarvaez.dev@gmail.com" },
+    { icon: Phone, title: "Telefono", detail: "+57 300 000 0000" },
+    { icon: MapPin, title: "Ubicacion", detail: "Colombia, disponible para proyectos academicos y freelance" },
   ];
 
   const socialIcons = [
@@ -99,7 +99,7 @@ export function Contact() {
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              <p className="text-gray-700 mb-4">Lorem ipsum</p>
+              <p className="text-gray-700 mb-4">Redes y portafolio profesional</p>
               <div className="flex gap-4">
                 {socialIcons.map((social, index) => (
                   <motion.div
@@ -141,9 +141,9 @@ export function Contact() {
             }}
           >
             {[
-              { label: "Lorem ipsum", type: "text", placeholder: "Lorem ipsum dolor" },
-              { label: "Lorem ipsum", type: "email", placeholder: "lorem@ipsum.com" },
-              { label: "Lorem ipsum", type: "text", placeholder: "Dolor sit amet" },
+              { label: "Nombre", type: "text", placeholder: "Tu nombre" },
+              { label: "Correo", type: "email", placeholder: "tucorreo@ejemplo.com" },
+              { label: "Asunto", type: "text", placeholder: "Propuesta de proyecto o contacto academico" },
             ].map((field, index) => (
               <motion.div
                 key={index}
@@ -175,10 +175,10 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <label className="block text-sm text-gray-700 mb-2">Lorem ipsum</label>
+              <label className="block text-sm text-gray-700 mb-2">Mensaje</label>
               <motion.textarea
                 rows={5}
-                placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                placeholder="Hola Gabriel, vimos tu portafolio y queremos hablar contigo."
                 className="w-full border-2 border-gray-300 p-3 text-sm resize-none focus:border-blue-500 focus:outline-none transition-colors"
                 whileFocus={{
                   scale: 1.02,
@@ -207,7 +207,7 @@ export function Contact() {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Lorem ipsum
+              Enviar mensaje
             </motion.button>
           </motion.div>
         </div>

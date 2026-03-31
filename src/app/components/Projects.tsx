@@ -5,21 +5,37 @@ export function Projects() {
   const projects = [
     {
       id: 1,
+      title: 'Dashboard de ventas',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      tags: ['React', 'Charts', 'Responsive UI'],
       image:
         'https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzczMTUwMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
     {
       id: 2,
+      title: 'Landing para startup',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      tags: ['Vite', 'Tailwind', 'SEO base'],
       image:
         'https://images.unsplash.com/photo-1758873271902-a63ecd5b5235?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjBwcm9qZWN0fGVufDF8fHx8MTc3MzIyMzIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
     {
       id: 3,
+      title: 'Sistema de reservas',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      tags: ['Node.js', 'MySQL', 'CRUD'],
       image:
         'https://images.unsplash.com/photo-1762341119237-98df67c9c3c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMHNjcmVlbnxlbnwxfHx8fDE3NzMxODYyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
     {
       id: 4,
+      title: 'Portafolio interactivo',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      tags: ['HTML', 'CSS', 'UI Design'],
       image:
         'https://images.unsplash.com/photo-1532623034127-3d92b01fb3c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzMxNDk5NzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
@@ -92,7 +108,7 @@ export function Projects() {
                   whileHover={{ scale: 1.02, color: "#2563eb" }}
                   transition={{ duration: 0.2 }}
                 >
-                  Lorem ipsum dolor sit amet
+                  {project.title}
                 </motion.h3>
 
                 <motion.p
@@ -100,8 +116,7 @@ export function Projects() {
                   initial={{ opacity: 0.8 }}
                   whileHover={{ opacity: 1 }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
+                  {project.description}
                 </motion.p>
 
                 <motion.div
@@ -111,7 +126,7 @@ export function Projects() {
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {['Lorem', 'Ipsum', 'Dolor'].map((tag, tagIndex) => (
+                  {project.tags.map((tag, tagIndex) => (
                     <motion.span
                       key={tag}
                       className="px-3 py-1 text-xs border border-gray-400 bg-gray-100"

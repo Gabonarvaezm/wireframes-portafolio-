@@ -2,8 +2,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section id="inicio" className="min-h-screen flex items-center pt-16 bg-gray-50 relative overflow-hidden">
-      {/* Floating background elements */}
+    <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-gray-50 pt-16">
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"
         animate={{
@@ -41,8 +40,8 @@ export function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center py-12">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-8 py-12 md:grid-cols-2 lg:gap-16">
           <motion.div
             className="order-2 md:order-1"
             initial={{ opacity: 0, x: -50 }}
@@ -83,7 +82,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.div
-              className="aspect-square max-w-lg mx-auto border-2 border-gray-300 bg-gray-200 flex items-center justify-center"
+              className="mx-auto aspect-square max-w-lg overflow-hidden rounded-[2rem] border-2 border-gray-300 bg-gray-200 shadow-[0_25px_50px_rgba(0,0,0,0.15)]"
               whileHover={{
                 scale: 1.05,
                 rotate: 2,
@@ -91,19 +90,11 @@ export function Hero() {
               }}
               transition={{ type: "spring", stiffness: 200 }}
             >
-              <motion.div
-                className="text-center text-gray-500"
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="text-sm tracking-wide">FOTO DE PERFIL</div>
-              </motion.div>
+              <img
+                src="/image.png"
+                alt="Foto de perfil de Gabriel Narvaez"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
           </motion.div>
         </div>

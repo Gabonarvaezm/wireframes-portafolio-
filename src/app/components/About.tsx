@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 
 export function About() {
   const stats = [
-    { number: "10+", label: "Lorem ipsum" },
-    { number: "25+", label: "Lorem ipsum" },
-    { number: "5", label: "Lorem ipsum" },
-    { number: "100%", label: "Lorem ipsum" },
+    { number: "12+", label: "Tecnologias dominadas" },
+    { number: "6", label: "Areas de trabajo" },
+    { number: "100%", label: "Enfoque responsive" },
+    { number: "24/7", label: "Aprendizaje continuo" },
   ];
 
   return (
